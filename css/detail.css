@@ -1,0 +1,45 @@
+.content_item{
+    width: 100%;
+    height: 6.25rem;
+    background-color: #ffffff;
+    border-left: 2px solid  #5f98ff;
+    margin-bottom: 0.31rem;
+    padding: 0.77rem 0.94rem 0;
+}
+.item_title{
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 0.88rem;
+    letter-spacing: 0.03rem;
+    color: #333333;
+    font-weight: 600;
+}
+.item_money,.item_date{
+    display: flex;
+    justify-content: space-between;
+}
+.money_left{
+    line-height: 2.69rem;
+}
+.money_left,.date_left,.date_right{
+    display: block;
+    font-family: MicrosoftYaHei;
+    font-size: 0.75rem;
+    letter-spacing: 0.03rem;
+	color: #999999;
+}
+.money_right{
+    display: block;
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 1.69rem;
+    letter-spacing: 0.07rem;  
+    font-weight: 600;
+}
+.item_date{
+    margin-top: -0.3rem;
+}
+.money_reduce{
+    color: #333333;
+}
+.money_add{
+     color: #ffbf44;
+}
