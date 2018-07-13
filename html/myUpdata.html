@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>信息更新</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <link rel="stylesheet" href="../css/ydui.css">
+    <!-- 通用样式 -->
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/three-pagelearning1.css">
+    <link rel="stylesheet" href="../css/four-taskapply.css">
+    <style>
+        .weui-cells {
+            margin-bottom: 5px;
+        }
+
+        .weui-cell_select .weui-cell__bd:after {
+            width: 10px;
+            height: 10px;
+        }
+        .weui-cellslast{
+            margin-bottom: 0;
+        }
+        .img_content{
+            width: 100px;
+            height: 100px;
+            display: none;
+        }
+        .input_border{
+            padding-right: 30px;
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+    <div class="page__bd">
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">用户名</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入您的用户名">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请输入您的手机号">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">姓名</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入您的姓名">
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="select2" class="weui-label label_change">性别</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select selector_12" name="select2">
+                        <option value="01">请选择</option>
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="select2" class="weui-label label_change">生日</label>
+                </div>
+                <div class="weui-cell__bd  input_border">
+                    <input class="weui-input" type="text" id='datetime-picker' placeholder="请选择" />
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="select2" class="weui-label label_change">地区</label>
+                </div>
+                <div class="weui-cell__bd input_border">
+                    <input class="weui-input" type="text" id='city-picker' placeholder="请选择" />
+                </div>
+            </div>
+        </div>
+       
+        
+        <div class="btn_top"></div>
+        <div class="item_btn">
+            <a href="javasciipt:void(0)">确定</a>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+<script src="../js/city-picker.js"></script>
+<script>
+    $(function () {
+        $("#datetime-picker").datetimePicker({
+            times: function () {
+                return [
+                ];
+            },
+            onChange: function (picker, values, displayValues) {
+                console.log(values);
+            }
+        });
+        $('.weui-select').on('change', function () {
+           $(this).css('color','#666');
+        })
+        $("#city-picker").cityPicker({
+            title: "请选择地址"
+        });
+        $('.item_btn').on('click',()=>{
+            $.alert("更新成功",()=>{
+                window.location.href = 'my.html'
+            });
+        });
+    });
+</script>
+
+</html>

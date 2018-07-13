@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>医生登陆</title>
+    <title>患者登陆</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
     <!-- 引入样式 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
@@ -60,22 +60,35 @@
         //     window.login_pass = $(this).val()
         // });
         // // 获取验证码
-        // $('.pass_btn').on('click', function () {
-        //     if ((/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(login_phone))) {
-        //         $.ajax({
-        //             url: 'http://hszj.yraise.com/note/sendNote',
-        //             data: {
-        //                 phone: login_phone
-        //             },
-        //             type: 'POST',
-        //             success: function (data) {
-        //                 console.log(data)
-        //             }
-        //         })
-        //     } else {
-        //         $.alert("请你填写正确的手机号");
-        //     }
-        // })
+        $('.pass_btn').on('click', function () {
+            // if ((/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(login_phone))) {
+            //     $.ajax({
+            //         url: 'http://hszj.yraise.com/note/sendNote',
+            //         data: {
+            //             phone: login_phone
+            //         },
+            //         type: 'POST',
+            //         success: function (data) {
+            //             console.log(data)
+            //         }
+            //     })
+            // } else {
+            //     $.alert("请你填写正确的手机号");
+            // }
+            var a = 60;
+            $('.pass_btn').text(`已发送(${a}s)`).attr("disabled", true);
+            let b = setInterval(() =>{
+                a--;
+                if(a>=0){
+                    $('.pass_btn').text(`已发送(${a}s)`)
+                }else{
+                    clearInterval(b);
+                    $('.pass_btn').attr('disabled',false)
+                }
+                
+            },1000)
+            
+        })
         // $('.login_btn>a').on('click', function () {
         //     if ((/^\d{6}$/.test(login_pass))) {
         //         $.ajax({
