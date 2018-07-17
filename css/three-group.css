@@ -71,10 +71,7 @@
   border-radius: 0.13rem;
   margin-right: 0.33rem;
 }
-.group_content ul li.content_item .group_group .item_name span {
-  display: block;
-}
-.group_content ul li.content_item .group_group .item_name span:nth-of-type(1) {
+.group_content ul li.content_item .group_group .item_name .frist_line span:nth-of-type(1) {
   font-family: MicrosoftYaHei-Bold;
   font-size: 1.07rem;
   font-weight: 600;
@@ -82,7 +79,7 @@
   color: #333333;
 }
 .group_content ul li.content_item .group_group .item_name span:nth-of-type(2),
-.group_content ul li.content_item .group_group .item_name span:nth-of-type(3) {
+.group_content ul li.content_item .group_group .item_name span:nth-of-type(3),.second-line span {
   font-family: MicrosoftYaHei;
   font-size: 0.8rem;
   letter-spacing: 0.03rem;

@@ -1,0 +1,213 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择医生</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <link rel="stylesheet" href="../../css/ydui.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="approve.css">
+    <link rel="stylesheet" href="../../css/balance.css">
+</head>
+
+<body ontouchstart>
+    <div class="page__bd" style="height: 100%;">
+        <div class="chooseDoc2">
+            <div class="doc">
+                <ul>
+                    <li>
+                        <span>医生</span>
+                        <span class="special_span">
+                            <a href="">陈大仙</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>科室</span>
+                        <span>肝脏内科</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="doc_title"> 
+                <span>家庭成员</span>
+                <a href="javascript:void(0)"  class="open-popup"  data-target="">+邀请家庭成员</a>
+            </div>
+            <div class="doc_photo">
+                <div class="item_left">
+                    <img src="../../image/patient.jpg" alt="">
+                    <span>朱佩琪</span>
+                    <span>24岁</span>
+                </div>
+                <div class="item_right">
+                    默认就诊人
+                </div>
+            </div>
+        </div>
+        <div class="btn_top"></div>
+        <div class="general_btn">
+            <a href="">确定建立家庭组</a>
+        </div>
+    </div>
+    <div class="popups_item">
+        <div class="item_title">
+            <a href="javascript:void(0)" class="cancel">取消</a>
+            <span>资金提现</span>
+            <a href="javascript:void(0)" class="sure">确定</a>
+        </div>
+        <div class="item_content">
+            <div class="content_input">
+                <input type="text" placeholder="请输入银行卡号" class="number_input" disabled="true">
+            </div>
+            <div class="content_title">
+                <ul>
+                    <li class="titleG">金额限定为总金额的50%</li>
+                    <li class="titleB">FDI，自主创新对于国家卫生医疗的推进</li>
+                    <li class="titleB">可提现：8728</li>
+                    <li class="titleB">获得资金：20000</li>
+                    <li class="titleB">剩余金额：2000</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item_number">
+            <ul>
+                <li class="number_num">1</li>
+                <li class="number_num">2</li>
+                <li class="number_num">3</li>
+                <li class="number_num">4</li>
+                <li class="number_num">5</li>
+                <li class="number_num">6</li>
+                <li class="number_num">7</li>
+                <li class="number_num">8</li>
+                <li class="number_num">9</li>
+                <li class="number_num">.</li>
+                <li class="number_num">0</li>
+                <li class="number_delete">
+                    <img src="../../image/delete.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="btn_top"></div>
+        <div class="general_btn">
+            <a href="">确定建立家庭组</a>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+<script src="../../js/ydui.js"></script>
+<script>
+    var click1 = {
+        el: null,
+        that: null,
+        init: function (config) {
+            this.el = $(config.class);
+            return this;
+        },
+        bind: function () {
+            var self = this;
+            this.el.on('click', function () {
+                this.that = this;
+                self.change(this.that);
+            });
+            return this;
+        },
+        change: function (that) {
+            if (that.src.indexOf('click1.png') > -1) {
+                $(that).attr('src', "../../image/click2.png");
+            } else {
+                $(that).attr('src', "../../image/click1.png")
+            }
+        },
+        all: function () {
+            this.el.on('click', function () {
+                if (this.src.indexOf('click1.png') > -1) {
+                    $(this).attr('src', "../../image/click2.png");
+                    $(click1.init({ class: '.item_click img' }).el).attr('src', "../../image/click2.png");
+                } else {
+                    $(this).attr('src', "../../image/click1.png");
+                    $(click1.init({ class: '.item_click img' }).el).attr('src', "../../image/click1.png");
+                }
+            })
+        }
+    };
+    var delete1 = {
+        el: null,
+        init: function (config) {
+            this.el = $(config.class);
+            return this;
+        },
+        remove: function () {
+            // this.el.on('click',function (){
+            $('.item_click img').each(function () {
+                if ($(this).attr('src').indexOf("click2.png") > -1) {
+                    $(this).parent().parent().parent().remove()
+                }
+            })
+            // })
+        }
+    };
+    var pro = {
+            el: null,
+            num: '',
+            init: function (config){
+                this.el = $(config.class);
+                return this;
+            },
+            pop: function (){
+                var that = this;
+                this.el.on('click',function (){
+                    $('.popups_item').slideToggle(500);
+                    that.num = '';
+                    $('.number_input').val(that.num);
+                })
+            },
+            add: function (){
+                var that = this;            
+                this.el.on('click',function (){
+                    that.num = that.num + $(this).text();
+                    console.log(that.num)
+                    $('.number_input').val(that.num);
+                })
+            },
+            delete: function (){
+                var that = this;
+                this.el.on('click',function (){
+                    that.num = that.num.substring(0,that.num.length-1)
+                    $('.number_input').val(that.num)
+                })
+            }
+        }
+      
+    $(function () {
+        click1.init({ class: '.item_click img' }).bind();
+        click1.init({ class: '.left_1 img' }).all();
+        // delete1.init({class: '.right_1'}).remove();
+        var dialog = window.YDUI.dialog;
+        $('.right_1').on('click', function () {
+            $('.item_click img').each(function () {
+                console.log($(this).attr('src').indexOf("click2.png"))
+                if ($(this).attr('src').indexOf("click2.png") == -1) {
+                    dialog.toast('请先选择患者', 'none', 1000);
+                } else {
+                    dialog.confirm('确定将该患者从您的患群移除吗？移除后该患者将无法继续预约。', function () {
+                        delete1.init({ class: '.right_1' }).remove();
+                    });
+                }
+            })
+        });
+        $('.open-popup').on('click',function(){
+            $("#popups_item").popup();
+        });
+        pro.init({class:'.card_right'}).pop();
+        pro.init({class:'.cancel'}).pop();
+        pro.init({class:'.sure'}).pop();
+        pro.init({class:'.number_num'}).add();
+        pro.init({class:'.number_delete'}).delete();
+    })
+</script>
+
+</html>

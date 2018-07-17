@@ -90,7 +90,7 @@ img{
     height: 4.375rem;
     background: transparent;
 }
-.item_btn{
+.item_btn,.general_btn{
     position: fixed;
     bottom: 0;
     z-index: 2;
@@ -101,7 +101,7 @@ img{
     padding: 0.53rem 1rem;
     box-sizing: border-box;
 }
-.item_btn a{
+.item_btn a,.general_btn a{
     display: block; 
 	height: 2.69rem;
 	background-color: #ff7200;

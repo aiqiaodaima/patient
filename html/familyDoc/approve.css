@@ -30,3 +30,108 @@
   letter-spacing: 0.21rem;
   color: #ffffff;
 }
+.chooseDoc2 .doc {
+  background: #fff;
+  padding: 0 1rem;
+}
+.chooseDoc2 .doc ul li {
+  border-bottom: 1px solid #eaeaea;
+  height: 4rem;
+  line-height: 4rem;
+  display: flex;
+}
+.chooseDoc2 .doc ul li:nth-last-child(1) {
+  border: none;
+}
+.chooseDoc2 .doc ul li span:nth-of-type(1) {
+  font-family: MicrosoftYaHei;
+  font-size: 1.07rem;
+  letter-spacing: 0.04rem;
+  color: #333333;
+  margin-right: 3.8rem;
+  white-space: nowrap;
+}
+.chooseDoc2 .doc ul li span:nth-of-type(2) {
+  font-family: MicrosoftYaHei;
+  font-size: 0.93rem;
+  letter-spacing: 0.04rem;
+  color: #666666;
+}
+.chooseDoc2 .doc ul li .special_span {
+  display: flex;
+  width: 100%;
+}
+.chooseDoc2 .doc ul li .special_span a {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.chooseDoc2 .doc ul li .special_span a:after {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 10px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.chooseDoc2 .doc_title {
+  height: 3.33rem;
+  padding: 0 1rem;
+  line-height: 3.33rem;
+  display: flex;
+  justify-content: space-between;
+}
+.chooseDoc2 .doc_title span {
+  font-family: MicrosoftYaHei;
+  font-size: 0.93rem;
+  color: #666666;
+}
+.chooseDoc2 .doc_title a {
+  font-family: MicrosoftYaHei-Bold;
+  font-weight: 600;
+  font-size: 0.93rem;
+  letter-spacing: 0rem;
+  color: #ff7200;
+}
+.chooseDoc2 .doc_photo {
+  display: flex;
+  background: #fff;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 5.33rem;
+  align-items: center;
+}
+.chooseDoc2 .doc_photo .item_left {
+  display: flex;
+  align-items: center;
+}
+.chooseDoc2 .doc_photo .item_left img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+.chooseDoc2 .doc_photo .item_left span:nth-of-type(1) {
+  font-family: MicrosoftYaHei-Bold;
+  font-size: 1.07rem;
+  letter-spacing: 0.04rem;
+  color: #333333;
+  font-weight: 600;
+  margin-right: 5px;
+}
+.chooseDoc2 .doc_photo .item_left span:nth-of-type(2) {
+  font-family: MicrosoftYaHei;
+  font-size: 0.8rem;
+  letter-spacing: 0.03rem;
+  color: #999999;
+}
+.chooseDoc2 .doc_photo .item_right {
+  font-family: MicrosoftYaHei;
+  font-size: 0.8rem;
+  letter-spacing: 0.03rem;
+  color: #999999;
+}
