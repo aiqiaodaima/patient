@@ -135,3 +135,8 @@
   letter-spacing: 0.03rem;
   color: #999999;
 }
+.popups_item {
+  border-top: 1px solid #eaeaea;
+  position: fixed;
+  bottom: 3.70rem !important;
+}
